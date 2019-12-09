@@ -179,4 +179,14 @@ function anagram(word, array= []) {
   return anagram(newWord, array);
 }
 
-console.log(anagram('east'));
+// console.log(anagram('east'));
+
+function binaryRep(num) {
+  if (num <= 0) {
+    return '';
+  }
+  let binary = num % 2;
+  return binaryRep(Math.floor(num / 2)) + binary;
+}
+
+console.log(binaryRep(25));
