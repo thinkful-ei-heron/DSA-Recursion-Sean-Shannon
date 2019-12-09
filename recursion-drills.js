@@ -47,19 +47,16 @@ function nthTriangular(num){
 
 //console.log(nthTriangular(9))
 
-function stringSplitter(string){
-
-  let newArray = []
-
-  if(string === ''){
-    return
+function stringSplitter(string, arr=[]){
+  if(!string.includes('/')){
+    arr.push(string);
+    return arr;
   }
-  if(string[0]==='/'){
-    newArray.push('')
-  }
-  newArray.push(string[0])
-  return newArray[0] + stringSplitter(string.slice(1))
-
+  let index = string.indexOf('/');
+  let word = string.slice(0,index);
+  arr.push(word);
+  let newString = string.slice(index +1, string.length);
+  return stringSplitter(newString, arr);
 }
 
-
+// console.log(stringSplitter('heylo/hi/02/20/2000'));
