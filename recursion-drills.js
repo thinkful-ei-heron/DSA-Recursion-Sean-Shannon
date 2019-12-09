@@ -140,5 +140,43 @@ let mySmallMaze = [
   [' ', ' ', ' ']
 ];
 
-console.log(wayOutOfMaze(maze, 0, 0));
+// console.log(wayOutOfMaze(maze, 0, 0));
 
+
+
+//Need to work on All ways out of maze
+
+
+
+//how could we refactor/make this work for more than 4 letter words?
+function anagram(word, array= []) {
+  if (word.length !== 4) {
+    return '4 letter words only please'
+  }
+
+  if (array.length === 24) {
+    return array;
+  }
+  if (!array.includes(word)) {
+    array.push(word);
+  }
+  let newWord = word[0] + word[1] + word[3] + word[2]
+  if (array.includes(newWord)) {
+    newWord = word[0] + word[3] + word[1] + word[2]
+    if (array.includes(newWord)) {
+      newWord = word[0] + word[3] + word[2] + word[1]
+      if (array.includes(newWord)) {
+        newWord = word[0] + word[2] + word[3] + word[1]
+        if (array.includes(newWord)) {
+          newWord = word[0] + word[2] + word[1] + word[3]
+          if (array.includes(newWord)) {
+            newWord = word[1] + word[2] + word[3] + word[0]
+          }
+        }
+      }
+    }
+  }
+  return anagram(newWord, array);
+}
+
+console.log(anagram('east'));
