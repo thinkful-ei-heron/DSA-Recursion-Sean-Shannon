@@ -22,4 +22,44 @@ function powerCalculator(integer, exp){
   return integer * powerCalculator(integer, exp-1);
 }
 
-// console.log(powerCalculator(10,3));
+//console.log(powerCalculator(10,3));
+
+function stringReverser(string){
+
+  if (string === ''){
+    return ('')
+  }
+
+  return string.charAt(string.length-1) + stringReverser(string.slice(0,-1))
+
+}
+
+//console.log(stringReverser('Hello World'))
+
+function nthTriangular(num){
+
+  if(num === 1) {
+    return 1
+  }
+
+  return num + nthTriangular(num-1)
+}
+
+//console.log(nthTriangular(9))
+
+function stringSplitter(string){
+
+  let newArray = []
+
+  if(string === ''){
+    return
+  }
+  if(string[0]==='/'){
+    newArray.push('')
+  }
+  newArray.push(string[0])
+  return newArray[0] + stringSplitter(string.slice(1))
+
+}
+
+
