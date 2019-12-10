@@ -62,4 +62,35 @@ function stringSplitter(string){
 
 }
 
+function fibonacci(number, sequence=[1,1], index=1){
+    
+    if(index>number-1){
+      return sequence
+    }
+
+    sequence.push(sequence[index]+sequence[index-1])
+      
+    //console.log(sequence)
+    ++index
+    return fibonacci(number, sequence, index)
+}
+
+//console.log(fibonacci(10))
+
+function factorial(number){
+
+    if(number===0){
+      return 1
+    }
+
+    return number * factorial(number-1)
+}
+
+//console.log(factorial(5))
+
+function wayOutOfMaze(){
+  
+}
+
+
 
