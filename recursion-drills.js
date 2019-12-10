@@ -85,9 +85,44 @@ function factorial(number){
 
 //console.log(factorial(5))
 
-function wayOutOfMaze(){
+function wayOutOfMaze(x,y, history =[]){
   
+  let mySmallMaze = [
+    [' ', ' ', ' '],
+    [' ', '*', ' '],
+    [' ', ' ', 'e']
+  ];
+
+  if((mySmallMaze[x+1][y]===(' ')) || (mySmallMaze[x+1][y]===('e'))){
+    history.push('D')
+    ++x
+  }
+  else if((mySmallMaze[x][y-1]===(' ')) ||(mySmallMaze[x][y-1]===('e'))) {
+    history.push('L')
+    --y
+  }
+  else if((mySmallMaze[x-1][y]===(' ')) || (mySmallMaze[x-1][y]===('e'))){
+    history.push('U')
+    --x
+  }
+  else if((mySmallMaze[x][y+1]===(' ')) || (mySmallMaze[x][y+1]===('e'))){
+    history.push('R')
+    ++y
+  }
+  else if(mySmallMaze[x][y]===('e')){
+    return (history)
+  }
+  else if()
+
+
+  console.log(history)
+  console.log(mySmallMaze[1][0])
+  wayOutOfMaze(x,y, history)
+
+
 }
+
+wayOutOfMaze(0,0);
 
 
 
