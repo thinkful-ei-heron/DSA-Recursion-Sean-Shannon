@@ -140,6 +140,7 @@ let mySmallMaze = [
   [' ', ' ', ' ']
 ];
 
+<<<<<<< HEAD
 //console.log(wayOutOfMaze(maze, 0, 0));
 
 function allWaysOutOfMaze(maze, x=0, y=0, path=[], direction=[], history=0){
@@ -203,6 +204,17 @@ function organizationalchart(orgChart, nested = '') {
 
 //organizationalChart(orgChartObj);
 
+=======
+// console.log(wayOutOfMaze(maze, 0, 0));
+
+
+
+//Need to work on All ways out of maze
+
+
+
+//how could we refactor/make this work for more than 4 letter words?
+>>>>>>> 95b2ba9293f5f7014e1bee86b23bbedc0ad63fa4
 function anagram(word, array= []) {
   if (word.length !== 4) {
     return '4 letter words only please'
@@ -233,6 +245,11 @@ function anagram(word, array= []) {
   return anagram(newWord, array);
 }
 
+<<<<<<< HEAD
+=======
+// console.log(anagram('east'));
+
+>>>>>>> 95b2ba9293f5f7014e1bee86b23bbedc0ad63fa4
 function binaryRep(num) {
   if (num <= 0) {
     return '';
